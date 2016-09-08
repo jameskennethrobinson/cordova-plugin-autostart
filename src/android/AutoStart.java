@@ -31,6 +31,9 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.ComponentName;
 
+import android.util.Log;
+
+
 public class AutoStart extends CordovaPlugin {
     
     public static final String PREFS = "autostart";
@@ -52,6 +55,7 @@ public class AutoStart extends CordovaPlugin {
             CallbackContext callback) throws JSONException {
 
         if ( action.equalsIgnoreCase("enable") ) {
+            Log.d("Truckerline", "Enabled!!!");
             setAutoStart(true);
             return true;
         } else if ( action.equalsIgnoreCase("disable") ) {
@@ -62,12 +66,12 @@ public class AutoStart extends CordovaPlugin {
     }
 
     private void setAutoStart(boolean enabled) {
-
         Context context = cordova.getActivity().getApplicationContext();
         int componentState;
         SharedPreferences sp = context.getSharedPreferences(PREFS, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
         if ( enabled ) { 
+            Log.d("Truckerline", "setAutoStart run!!!");
             componentState = PackageManager.COMPONENT_ENABLED_STATE_ENABLED;
             // Store the class name of your main activity for AppStarter
             editor.putString(CLASS_NAME, cordova.getActivity().getLocalClassName()); 
@@ -76,10 +80,10 @@ public class AutoStart extends CordovaPlugin {
             componentState = PackageManager.COMPONENT_ENABLED_STATE_DISABLED;
             editor.remove(CLASS_NAME);
         }
-        editor.commit();	
+        // editor.commit();	
         // Enable or Disable BootCompletedReceiver
-        ComponentName bootCompletedReceiver = new ComponentName(context, BootCompletedReceiver.class);
-        PackageManager pm = context.getPackageManager();
-        pm.setComponentEnabledSetting(bootCompletedReceiver, componentState, PackageManager.DONT_KILL_APP);
+        // ComponentName bootCompletedReceiver = new ComponentName(context, BootCompletedReceiver.class);
+        // PackageManager pm = context.getPackageManager();
+        // pm.setComponentEnabledSetting(bootCompletedReceiver, componentState, PackageManager.DONT_KILL_APP);
     }
 }
