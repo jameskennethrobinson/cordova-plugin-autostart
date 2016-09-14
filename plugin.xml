@@ -37,12 +37,18 @@
         </config-file>
 
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
-            <!--<receiver
-                android:name="com.tonikorin.cordova.plugin.autostart.BootCompletedReceiver" android:enabled="false">
+            <receiver
+                android:name="com.tonikorin.cordova.plugin.autostart.BootCompletedReceiver" android:enabled="true">
                 <intent-filter>
                     <action android:name="android.intent.action.BOOT_COMPLETED" />
                 </intent-filter>
-            </receiver>-->
+            </receiver>
+            <receiver
+                android:name="com.tonikorin.cordova.plugin.autostart.PackageReplacedReceiverZenDrive" android:enabled="true">
+                <intent-filter>
+                    <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+                </intent-filter>
+            </receiver>
             <!--<receiver
                 android:name="com.tonikorin.cordova.plugin.autostart.UserPresentReceiver" android:enabled="false">
                 <intent-filter>
@@ -55,6 +61,7 @@
                     <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
                 </intent-filter>
             </receiver>
+            
         </config-file>
 
         <!--<config-file target="AndroidManifest.xml" parent="/manifest">
