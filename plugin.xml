@@ -68,7 +68,7 @@
             <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
         </config-file>-->
 
-        <!--<source-file src="src/android/BootCompletedReceiver.java" 	target-dir="src/com/tonikorin/cordova/plugin/autostart" />-->
+        <source-file src="src/android/BootCompletedReceiver.java" 	target-dir="src/com/tonikorin/cordova/plugin/autostart" />
         <!--<source-file src="src/android/UserPresentReceiver.java"   	target-dir="src/com/tonikorin/cordova/plugin/autostart" />-->
         <source-file src="src/android/PackageReplacedReceiver.java" target-dir="src/com/tonikorin/cordova/plugin/autostart" />
         <!--<source-file src="src/android/AppStarter.java"            	target-dir="src/com/tonikorin/cordova/plugin/autostart" />-->
