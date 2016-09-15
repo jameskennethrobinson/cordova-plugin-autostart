@@ -4,11 +4,10 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import com.tonikorin.cordova.plugin.autostart.AppStarter;
 import android.util.Log;
 
 
-import com.zendrive.sdk.receiver.WakeupReceiver
+import com.zendrive.sdk.receiver.WakeupReceiver;
  
 public class BootCompletedReceiver extends BroadcastReceiver {
     
@@ -19,6 +18,5 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         WakeupReceiver wr = new WakeupReceiver();
 
         wr.onReceive(context, intent);
-        // appStarter.run(context, intent, PackageManager.COMPONENT_ENABLED_STATE_ENABLED);
     }
 }

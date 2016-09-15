@@ -1,7 +1,6 @@
 
 package com.tonikorin.cordova.plugin.autostart;
 
-import com.transistorsoft.cordova.bggeo.BootReceiver;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -12,10 +11,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 
-import com.zendrive.sdk.receiver.WakeupReceiver
+import com.zendrive.sdk.receiver.WakeupReceiver;
 
  
-public class PackageReplacedReceiver extends BroadcastReceiver {
+public class PackageReplacedReceiverZenDrive extends BroadcastReceiver {
     
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -23,7 +22,6 @@ public class PackageReplacedReceiver extends BroadcastReceiver {
 
         WakeupReceiver wr = new WakeupReceiver();
 
-        wr.onReceive(context, intent)
-
+        wr.onReceive(context, intent);
     }
 }

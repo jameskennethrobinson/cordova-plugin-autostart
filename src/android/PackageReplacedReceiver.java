@@ -22,8 +22,5 @@ public class PackageReplacedReceiver extends BroadcastReceiver {
         BootReceiver br = new BootReceiver();
 
         br.onReceive(context, intent);
-        
-        // AppStarter appStarter = new AppStarter();
-        // appStarter.run(context, intent, AppStarter.BYPASS_USERPRESENT_MODIFICATION );
     }
 }
